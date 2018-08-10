@@ -26,7 +26,7 @@
         </activity>
 
         <!--操作符-->
-        <activity android:name=".module.rxjava2.operators.RxOperatorsActivity">
+        <activity android:name=".module.rxjava2.operators.item.RxOperatorsActivity">
         </activity>
 
         <!-- Create -->
@@ -147,8 +147,10 @@
         <activity android:name=".module.rxjava2.usecases.debounce.RxCaseDebounceActivity"/>
         <activity android:name=".module.rxjava2.usecases.interval.RxCaseIntervalActivity"/>
         <activity android:name=".module.rxjava2.Thread.RxThreadActivity"/>
-        <activity android:name=".module.rxjava2.operators.RxStartWithActivity" />
-        <activity android:name=".module.rxjava2.operators.RxCombineLatestActivity" />
+        <activity android:name=".module.rxjava2.operators.item.RxStartWithActivity" />
+        <activity android:name=".module.rxjava2.operators.item.RxCombineLatestActivity" />
+        <activity android:name=".module.rxjava2.operators.item.RxOnErrorReturnActivity" />
+        <activity android:name=".module.rxjava2.operators.item.RxOnErrorResumeNextActivity" />
 
     </application>
 

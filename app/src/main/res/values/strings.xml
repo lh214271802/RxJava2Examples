@@ -33,6 +33,8 @@
     <string name="rx_merge">merge</string>
     <string name="rx_startWith">startWith</string>
     <string name="rx_combineLatest">combineLatest</string>
+    <string name="rx_onErrorReturn">onErrorReturn</string>
+    <string name="rx_onErrorResumeNext">onErrorResumeNext</string>
     <string name="rx_reduce">reduce</string>
     <string name="rx_scan">scan</string>
     <string name="rx_window">window</string>

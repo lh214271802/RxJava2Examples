@@ -8,6 +8,7 @@ import com.nanchen.rxjava2examples.module.rxjava2.CategoryBaseFragment;
 import com.nanchen.rxjava2examples.module.rxjava2.operators.item.RxAsyncSubjectActivity;
 import com.nanchen.rxjava2examples.module.rxjava2.operators.item.RxBehaviorSubjectActivity;
 import com.nanchen.rxjava2examples.module.rxjava2.operators.item.RxBufferActivity;
+import com.nanchen.rxjava2examples.module.rxjava2.operators.item.RxCombineLatestActivity;
 import com.nanchen.rxjava2examples.module.rxjava2.operators.item.RxCompletableActivity;
 import com.nanchen.rxjava2examples.module.rxjava2.operators.item.RxConcatActivity;
 import com.nanchen.rxjava2examples.module.rxjava2.operators.item.RxConcatMapActivity;
@@ -24,11 +25,14 @@ import com.nanchen.rxjava2examples.module.rxjava2.operators.item.RxJustActivity;
 import com.nanchen.rxjava2examples.module.rxjava2.operators.item.RxLastActivity;
 import com.nanchen.rxjava2examples.module.rxjava2.operators.item.RxMapActivity;
 import com.nanchen.rxjava2examples.module.rxjava2.operators.item.RxMergeActivity;
+import com.nanchen.rxjava2examples.module.rxjava2.operators.item.RxOnErrorResumeNextActivity;
+import com.nanchen.rxjava2examples.module.rxjava2.operators.item.RxOnErrorReturnActivity;
 import com.nanchen.rxjava2examples.module.rxjava2.operators.item.RxPublishSubjectActivity;
 import com.nanchen.rxjava2examples.module.rxjava2.operators.item.RxReduceActivity;
 import com.nanchen.rxjava2examples.module.rxjava2.operators.item.RxScanActivity;
 import com.nanchen.rxjava2examples.module.rxjava2.operators.item.RxSingleActivity;
 import com.nanchen.rxjava2examples.module.rxjava2.operators.item.RxSkipActivity;
+import com.nanchen.rxjava2examples.module.rxjava2.operators.item.RxStartWithActivity;
 import com.nanchen.rxjava2examples.module.rxjava2.operators.item.RxTakeActivity;
 import com.nanchen.rxjava2examples.module.rxjava2.operators.item.RxTimerActivity;
 import com.nanchen.rxjava2examples.module.rxjava2.operators.item.RxWindowActivity;
@@ -98,6 +102,8 @@ public class OperatorsFragment extends CategoryBaseFragment {
         data.add(new OperatorModel(getString(R.string.rx_Flowable), "专用于解决背压问题"));
         data.add(new OperatorModel(getString(R.string.rx_startWith), "被观察者的数据流前再增加一点同类型的数据"));
         data.add(new OperatorModel(getString(R.string.rx_combineLatest), "把第一个被观察者最新的数据，和另外的观察者相连"));
+        data.add(new OperatorModel(getString(R.string.rx_onErrorReturn), "让Observable遇到错误时发射一个特殊的项并且正常终止"));
+        data.add(new OperatorModel(getString(R.string.rx_onErrorResumeNext), "让Observable在遇到错误时开始发射第二个Observable的数据序列"));
     }
 
     @Override
@@ -192,6 +198,12 @@ public class OperatorsFragment extends CategoryBaseFragment {
                 break;
             case 29:
                 startActivity(new Intent(getActivity(), RxCombineLatestActivity.class));
+                break;
+            case 30:
+                startActivity(new Intent(getActivity(), RxOnErrorReturnActivity.class));
+                break;
+            case 31:
+                startActivity(new Intent(getActivity(), RxOnErrorResumeNextActivity.class));
                 break;
         }
     }

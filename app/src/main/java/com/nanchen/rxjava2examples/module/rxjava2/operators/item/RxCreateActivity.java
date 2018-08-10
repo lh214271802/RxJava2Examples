@@ -3,6 +3,7 @@ package com.nanchen.rxjava2examples.module.rxjava2.operators.item;
 import android.util.Log;
 
 import com.nanchen.rxjava2examples.R;
+import com.nanchen.rxjava2examples.net.err.HttpResultFunction;
 
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
@@ -69,7 +70,7 @@ public class RxCreateActivity extends RxOperatorBaseActivity {
                 mRxOperatorsText.append("%%%%%%Observable map%%%%%%" + parseInt + "\n");
                 return parseInt;
             }
-        })
+        }).onErrorResumeNext(new HttpResultFunction<Integer>())
                 .subscribe(new Observer<Integer>() {
                     private int i;
                     private Disposable mDisposable;
