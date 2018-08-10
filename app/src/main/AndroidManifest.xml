@@ -147,6 +147,8 @@
         <activity android:name=".module.rxjava2.usecases.debounce.RxCaseDebounceActivity"/>
         <activity android:name=".module.rxjava2.usecases.interval.RxCaseIntervalActivity"/>
         <activity android:name=".module.rxjava2.Thread.RxThreadActivity"/>
+        <activity android:name=".module.rxjava2.operators.RxStartWithActivity" />
+        <activity android:name=".module.rxjava2.operators.RxCombineLatestActivity" />
 
     </application>
 

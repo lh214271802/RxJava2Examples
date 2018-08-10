@@ -22,6 +22,8 @@ import butterknife.OnClick;
 public abstract class RxOperatorBaseActivity extends ToolbarBaseActivity {
     @BindView(R.id.rx_operators_btn)
     protected Button mRxOperatorsBtn;
+    @BindView(R.id.rx_operators_btn2)
+    protected Button mRxOperatorsBtn222;
     @BindView(R.id.rx_operators_text)
     protected TextView mRxOperatorsText;
 
@@ -45,5 +47,14 @@ public abstract class RxOperatorBaseActivity extends ToolbarBaseActivity {
     public void onViewClicked() {
         mRxOperatorsText.append("\n");
         doSomething();
+    }
+
+    @OnClick(R.id.rx_operators_btn2)
+    public void onViewClicked2() {
+        doSomething2();
+    }
+
+    protected void doSomething2() {
+
     }
 }

@@ -5,8 +5,12 @@ import android.util.Log;
 import com.nanchen.rxjava2examples.R;
 
 import io.reactivex.Observable;
+import io.reactivex.ObservableEmitter;
+import io.reactivex.ObservableOnSubscribe;
+import io.reactivex.ObservableSource;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.functions.Consumer;
+import io.reactivex.functions.Function;
 
 /**
  * last
@@ -28,8 +32,19 @@ public class RxLastActivity extends RxOperatorBaseActivity {
 
     @Override
     protected void doSomething() {
-        Observable.just(1, 2, 3)
-                .last(4)
+        Observable.create(new ObservableOnSubscribe<Integer>() {
+            @Override
+            public void subscribe(ObservableEmitter<Integer> e) throws Exception {
+                e.onNext(88);
+                e.onComplete();
+            }
+        }).flatMap(new Function<Integer, ObservableSource<Integer>>() {
+            @Override
+            public ObservableSource<Integer> apply(Integer integer) throws Exception {
+                return Observable.just(1, 2, 3, 4, 5, 7, 8, 9);
+            }
+        }).skipLast(3)
+                .last(55)//默认值4
                 .subscribe(new Consumer<Integer>() {
                     @Override
                     public void accept(@NonNull Integer integer) throws Exception {

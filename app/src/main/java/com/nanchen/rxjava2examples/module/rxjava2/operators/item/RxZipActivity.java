@@ -64,6 +64,18 @@ public class RxZipActivity extends RxOperatorBaseActivity {
                     e.onNext("C");
                     mRxOperatorsText.append("String emit : C \n");
                     Log.e(TAG, "String emit : C \n");
+                        e.onNext("D");
+                    mRxOperatorsText.append("String emit : D \n");
+                    Log.e(TAG, "String emit : D \n");
+                    e.onNext("E");
+                    mRxOperatorsText.append("String emit : E \n");
+                    Log.e(TAG, "String emit : E \n");
+                    e.onNext("F");
+                    mRxOperatorsText.append("String emit : F \n");
+                    Log.e(TAG, "String emit : F \n");
+                    e.onNext("G");
+                    mRxOperatorsText.append("String emit : G \n");
+                    Log.e(TAG, "String emit : G \n");
                 }
             }
         });

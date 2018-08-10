@@ -37,8 +37,9 @@ public class RxIntervalActivity extends RxOperatorBaseActivity {
     protected void doSomething() {
         mRxOperatorsText.append("interval start : " + TimeUtil.getNowStrTime() + "\n");
         Log.e(TAG, "interval start : " + TimeUtil.getNowStrTime() + "\n");
-        mDisposable = Observable.interval(3, 2, TimeUnit.SECONDS)
+        mDisposable = Observable.interval(1, TimeUnit.SECONDS)
                 .subscribeOn(Schedulers.io())
+                .take(5)
                 .observeOn(AndroidSchedulers.mainThread()) // 由于interval默认在新线程，所以我们应该切回主线程
                 .subscribe(new Consumer<Long>() {
                     @Override

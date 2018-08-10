@@ -12,6 +12,11 @@
         style="@style/MyBtnStyle"
         android:text="@string/doSomething"/>
 
+    <Button
+        android:id="@+id/rx_operators_btn2"
+        style="@style/MyBtnStyle"
+        android:text="@string/doSomething2"/>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">

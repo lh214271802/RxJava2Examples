@@ -6,7 +6,7 @@ package com.nanchen.rxjava2examples.model;
  * Date: 2017-06-30  15:38
  */
 
-public class MobileAddress {
+public class MobileAddress extends BaseBean{
 
     /**
      * error_code : 0

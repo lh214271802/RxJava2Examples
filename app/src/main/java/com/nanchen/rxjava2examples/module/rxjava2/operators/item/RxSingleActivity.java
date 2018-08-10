@@ -10,6 +10,7 @@ import io.reactivex.Single;
 import io.reactivex.SingleObserver;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Function;
 
 /**
  * single
@@ -33,14 +34,20 @@ public class RxSingleActivity extends RxOperatorBaseActivity {
     @Override
     protected void doSomething() {
         Single.just(new Random().nextInt())
-                .subscribe(new SingleObserver<Integer>() {
+                .map(new Function<Integer, String>() {
+                    @Override
+                    public String apply(Integer integer) throws Exception {
+                        return String.valueOf(Integer.parseInt(integer+"f1d-d"));
+                    }
+                })
+                .subscribe(new SingleObserver<String>() {
                     @Override
                     public void onSubscribe(@NonNull Disposable d) {
 
                     }
 
                     @Override
-                    public void onSuccess(@NonNull Integer integer) {
+                    public void onSuccess(@NonNull String integer) {
                         mRxOperatorsText.append("single : onSuccess : "+integer+"\n");
                         Log.e(TAG, "single : onSuccess : "+integer+"\n" );
                     }

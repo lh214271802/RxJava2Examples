@@ -5,7 +5,9 @@ import android.util.Log;
 import com.nanchen.rxjava2examples.R;
 
 import io.reactivex.Observable;
+import io.reactivex.Observer;
 import io.reactivex.annotations.NonNull;
+import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
 
 /**
@@ -35,11 +37,26 @@ public class RxDoOnNextActivity extends RxOperatorBaseActivity {
                         mRxOperatorsText.append("doOnNext 保存 " + integer + "成功" + "\n");
                         Log.e(TAG, "doOnNext 保存 " + integer + "成功" + "\n");
                     }
-                }).subscribe(new Consumer<Integer>() {
+                }).subscribe(new Observer<Integer>() {
             @Override
-            public void accept(@NonNull Integer integer) throws Exception {
+            public void onSubscribe(Disposable d) {
+                mRxOperatorsText.append("onSubscribe :" + d.isDisposed() + "\n");
+            }
+
+            @Override
+            public void onNext(Integer integer) {
                 mRxOperatorsText.append("doOnNext :" + integer + "\n");
                 Log.e(TAG, "doOnNext :" + integer + "\n");
+            }
+
+            @Override
+            public void onError(Throwable e) {
+
+            }
+
+            @Override
+            public void onComplete() {
+
             }
         });
     }

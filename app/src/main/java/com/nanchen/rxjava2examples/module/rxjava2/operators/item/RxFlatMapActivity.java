@@ -56,8 +56,8 @@ public class RxFlatMapActivity extends RxOperatorBaseActivity {
                 for (int i = 0; i < 3; i++) {
                     list.add("I am value " + integer);
                 }
-                int delayTime = (int) (1 + Math.random() * 10);
-                return Observable.fromIterable(list).delay(delayTime, TimeUnit.MILLISECONDS);
+                int delayTime = (int) (1 + Math.random() * 3);
+                return Observable.fromIterable(list).delay(delayTime, TimeUnit.SECONDS);
             }
         }).subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
