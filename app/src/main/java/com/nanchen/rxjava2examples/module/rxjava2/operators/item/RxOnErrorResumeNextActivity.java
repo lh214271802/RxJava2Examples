@@ -15,7 +15,7 @@ import io.reactivex.schedulers.Schedulers;
 /**
  * @author LiaoHui
  * @date 2018/8/10
- * @desc
+ * @desc 让Observable在遇到错误时开始发射第二个Observable的数据序列
  */
 public class RxOnErrorResumeNextActivity extends RxOperatorBaseActivity {
     @Override
